@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/pg1_home"
+        android:icon="@drawable/home_24"
+        android:title="@string/bnav_home"/>
+
+    <item
+        android:id="@+id/pg2_search"
+        android:icon="@drawable/search_24"
+        android:title="@string/bnav_search"/>
+
+    <item
+        android:id="@+id/pg2_saved"
+        android:icon="@drawable/saved_24"
+        android:title="@string/bnav_saved"/>
+
+    <item
+        android:id="@+id/pg2_account"
+        android:icon="@drawable/account_circle_24"
+        android:title="@string/bnav_account"/>
+
+</menu>

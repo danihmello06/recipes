@@ -3,26 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/pg1_home">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.recipes.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/pg1_home"
+        android:name="com.example.recipes.ui.HomeFragment"
+        android:label="@string/activity_home_label"
+        tools:layout="@layout/fragment_home"/>
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.recipes.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/pg2_search"
+        android:name="com.example.recipes.ui.SearchFragment"
+        android:label="activity_search"
+        tools:layout="@layout/fragment_search" />
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+    <fragment
+        android:id="@+id/pg2_saved"
+        android:name="com.example.recipes.ui.SavedRecipesFragment"
+        android:label="activity_saved_recipes"
+        tools:layout="@layout/fragment_saved_recipes" />
+
+    <fragment
+        android:id="@+id/pg2_account"
+        android:name="com.example.recipes.ui.AccountFragment"
+        android:label="activity_account"
+        tools:layout="@layout/fragment_account" />
+
 </navigation>

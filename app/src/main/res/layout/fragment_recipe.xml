@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.RecipeFragment">
+
+    <ImageView
+        android:id="@+id/image_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/title_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:text="@string/recipe_title"
+        android:textSize="24dp"
+        app:layout_constraintTop_toBottomOf="@id/image_recipe"/>
+
+
+    <TextView
+        android:id="@+id/ingredients_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:text="@string/recipe_ingredients"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@id/title_recipe"
+        app:layout_constraintTop_toBottomOf="@id/title_recipe"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_ingredients"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/ingredients_recipe"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/fragment_ingredients" />
+
+    <TextView
+        android:id="@+id/instructions_recipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/black"
+        android:text="@string/recipe_instructions"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@id/title_recipe"
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_ingredients"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
