@@ -11,3 +11,5 @@ h
 8app/src/main/java/com/example/recipes/ui/HomeFragment.kt,2\d\2dfd9e0c2047e3ce66b5ad29eb55f5714500ef54
 k
 ;app/src/main/java/com/example/recipes/ui/AccountFragment.kt,b\4\b43de9bfe5bf62fc66a8a151c837a1535c7c6c7c
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
