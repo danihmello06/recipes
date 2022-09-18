@@ -5,23 +5,22 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Recipe(
-    val id: String,
     val title: String,
-    val url: String,
-    val ingredient: Ingredient,
-    val instruction: Instruction
+    val imageUrl: String,
+    val slug: String,
+    val author: String,
+    val serves: String,
+    val prepareTime: String,
+    val steps: Steps
 ): Parcelable {
 
     @Parcelize
-    data class Ingredient(
-        val amount: Double,
-        val unity: String,
-        val ingredientItem: String
+    data class Steps(
+        val title: String,
+        val ingredients: List<String>,
+        val preparation: String
     ): Parcelable
 
-    @Parcelize
-    data class Instruction(
-        val instructionStep: String
-    ): Parcelable
+
 
 }
