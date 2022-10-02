@@ -11,7 +11,7 @@ data class Recipe(
     val author: String,
     val serves: String,
     val prepareTime: String,
-    val steps: Steps
+    val steps: List<Steps>
 ): Parcelable {
 
     @Parcelize

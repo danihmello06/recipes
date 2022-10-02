@@ -1,10 +1,12 @@
 package com.example.recipes.domain
 
+import com.example.recipes.api.RecipeResponse
+import com.example.recipes.api.SearchResponse
 import com.example.recipes.data.Recipe
 import com.example.recipes.data.Search
 
 interface RecipesUseCase {
-    suspend fun getSearchResult(): List<Search>
+    suspend fun getSearchResult(searchedWord: String): List<Search>
 
-    suspend fun getRecipe(): Recipe
+    suspend fun getRecipe(searchedRecipe: String): Recipe
 }

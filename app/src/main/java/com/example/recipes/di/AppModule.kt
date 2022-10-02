@@ -1,6 +1,10 @@
 package com.example.recipes.di
 
 import com.example.recipes.api.RecipeApi
+import com.example.recipes.api.RecipesRepositoryImpl
+import com.example.recipes.domain.RecipesRepository
+import com.example.recipes.domain.RecipesUseCase
+import com.example.recipes.domain.RecipesUseCaseImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +27,12 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUnsplashApi(retrofit: Retrofit): RecipeApi =
+    fun provideRecipeApi(retrofit: Retrofit): RecipeApi =
         retrofit.create(RecipeApi::class.java)
 
+    @Provides
+    @Singleton
+    fun provideRecipesRepository(repository: RecipesRepositoryImpl): RecipesRepository {
+        return repository
+    }
 }

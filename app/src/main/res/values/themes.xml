@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Recipe" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#888888</item>
+
+    </style>
+</resources>
