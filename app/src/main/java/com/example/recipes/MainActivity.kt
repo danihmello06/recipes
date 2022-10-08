@@ -7,8 +7,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.recipes.databinding.ActivityMainBinding
-import com.example.recipes.ui.MyViewModel
+import com.example.recipes.ui.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     lateinit var searchView: SearchView
-    private val myViewModel: MyViewModel by viewModels()
+    private val appViewModel: AppViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,27 +27,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         navController = this.findNavController(R.id.nav_host_fragment)
 
-        searchView = binding.searchButton
-
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let {
-                    myViewModel.requestSearch(it)
-                }
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return false
-            }
-
-        })
     }
-
-    fun setSearchClickListener() {
-
-    }
-
-
 
 }

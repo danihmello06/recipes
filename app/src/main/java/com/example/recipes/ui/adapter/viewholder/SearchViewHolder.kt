@@ -1,7 +1,8 @@
 package com.example.recipes.ui.adapter.viewholder
 
-import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.recipes.ItemSearchClickListener
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.SearchItemBinding
@@ -16,8 +17,16 @@ class SearchViewHolder(
     }
 
     private fun setContent(itemSearch: Search) {
+
+        binding.apply {
+            Glide.with(itemView)
+                .load(itemSearch.imageUrl)
+                .centerCrop()
+                .transition(DrawableTransitionOptions.withCrossFade())
+                .into(searchImage)
+        }
+
         with(binding) {
-            searchImage.setImageURI(itemSearch.imageUrl!! as Uri)
             searchTitle.text = itemSearch.title
         }
     }
