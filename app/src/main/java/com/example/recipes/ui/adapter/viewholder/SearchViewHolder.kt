@@ -13,6 +13,7 @@ class SearchViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(itemSearch: Search) {
+        binding.searchImage.layout(0,0,0,0) //HERE
         setContent(itemSearch)
     }
 
@@ -21,8 +22,6 @@ class SearchViewHolder(
         binding.apply {
             Glide.with(itemView)
                 .load(itemSearch.imageUrl)
-                .centerCrop()
-                .transition(DrawableTransitionOptions.withCrossFade())
                 .into(searchImage)
         }
 

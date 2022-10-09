@@ -26,6 +26,8 @@ class AppViewModel @Inject constructor(
         }
     }
 
+
+
     fun buildRecipe(searchedRecipe: String) {
         viewModelScope.launch {
             recipesUseCase.getRecipe(searchedRecipe)

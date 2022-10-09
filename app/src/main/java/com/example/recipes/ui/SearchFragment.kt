@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.recipes.ItemSearchClickListener
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.FragmentSearchBinding
@@ -28,19 +29,21 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         setupListener()
 
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.searchRecycler.layoutManager = LinearLayoutManager(this.requireContext(), LinearLayoutManager.VERTICAL, false)
+        binding.searchRecycler.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
         viewModel.apply {
             setupResponseObserver()
         }
     }
 
     private fun setupListener() {
-        val searchView = binding.searchButton
+        val searchView = binding.searchToolbar.searchButton
         searchView.setOnQueryTextListener(
             object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
@@ -49,11 +52,11 @@ class SearchFragment : Fragment() {
                     query?.let {
                         viewModel.requestSearch(it)
                     }
-
-                    return true
+                    return false
                 }
+
                 override fun onQueryTextChange(newText: String?): Boolean {
-                    return true
+                    return false
                 }
             }
         )
