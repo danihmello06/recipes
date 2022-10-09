@@ -35,7 +35,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.searchRecycler.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+//        binding.searchRecycler.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         viewModel.apply {
             setupResponseObserver()
@@ -66,11 +66,23 @@ class SearchFragment : Fragment() {
         searchResult.observe(
             viewLifecycleOwner
         ) {
+            binding.searchRecycler.setHasFixedSize(true)
             binding.searchRecycler.adapter = SearchAdapter(
                 it, itemSearchClickListener()
             )
         }
     }
+
+//    private fun createAdapter() {
+//        if(viewModel.searchResult.value != null) {
+//            viewModel.searchResult.value?.let {
+//                binding.searchRecycler.adapter = SearchAdapter(
+//                    it, itemSearchClickListener()
+//                )
+//            }
+//        }
+//    }
+
 
     private fun itemSearchClickListener() = object : ItemSearchClickListener {
         override fun onClick(searchItem: Search) {

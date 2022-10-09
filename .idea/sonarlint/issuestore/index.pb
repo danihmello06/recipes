@@ -13,5 +13,3 @@ j
 :app/src/main/java/com/example/recipes/ui/RecipeFragment.kt,5\f\5fcae79141073639aedcfceaaaf3e836629fec7c
 d
 4app/src/main/java/com/example/recipes/data/Search.kt,7\9\79c5dbe4ec51fbe801600aaa6c1031cfff3961c8
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
