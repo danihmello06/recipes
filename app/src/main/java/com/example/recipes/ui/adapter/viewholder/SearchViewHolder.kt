@@ -21,12 +21,6 @@ class SearchViewHolder(
 
     private fun setContent(itemSearch: Search) {
 
-//        binding.apply {
-//            Glide.with(itemView)
-//                .load(itemSearch.imageUrl)
-//                .into(searchImage)
-//        }
-
         with(binding) {
             searchTitle.text = itemSearch.title
             searchImage.loadImage(itemSearch.imageUrl)

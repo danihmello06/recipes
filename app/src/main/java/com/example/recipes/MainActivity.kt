@@ -16,7 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     lateinit var searchView: SearchView
     private val appViewModel: AppViewModel by viewModels()
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
-        navController = this.findNavController(R.id.nav_host_fragment)
 
     }
 

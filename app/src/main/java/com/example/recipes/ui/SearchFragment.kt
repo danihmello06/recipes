@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.example.recipes.ItemSearchClickListener
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.FragmentSearchBinding
@@ -29,13 +28,11 @@ class SearchFragment : Fragment() {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         setupListener()
 
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        binding.searchRecycler.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         viewModel.apply {
             setupResponseObserver()
@@ -73,20 +70,11 @@ class SearchFragment : Fragment() {
         }
     }
 
-//    private fun createAdapter() {
-//        if(viewModel.searchResult.value != null) {
-//            viewModel.searchResult.value?.let {
-//                binding.searchRecycler.adapter = SearchAdapter(
-//                    it, itemSearchClickListener()
-//                )
-//            }
-//        }
-//    }
-
-
     private fun itemSearchClickListener() = object : ItemSearchClickListener {
         override fun onClick(searchItem: Search) {
-
+            val action = SearchFragmentDirections.actionHomesearchToRecipe(searchItem.slug)
+            viewModel.passSlug(searchItem.slug)
+            findNavController().navigate(action)
         }
 
     }

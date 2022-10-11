@@ -17,6 +17,7 @@ class AppViewModel @Inject constructor(
 
     private val _search = MutableLiveData<List<Search>>()
     val searchResult: LiveData<List<Search>> get() = _search
+    var theSlug: String? = ""
 
     fun requestSearch(searchedWord: String) {
         viewModelScope.launch {
@@ -26,6 +27,9 @@ class AppViewModel @Inject constructor(
         }
     }
 
+    fun passSlug(informedSlug: String) {
+        theSlug = informedSlug
+    }
 
 
     fun buildRecipe(searchedRecipe: String) {
