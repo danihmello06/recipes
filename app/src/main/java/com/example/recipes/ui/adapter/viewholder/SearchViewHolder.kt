@@ -24,6 +24,9 @@ class SearchViewHolder(
         with(binding) {
             searchTitle.text = itemSearch.title
             searchImage.loadImage(itemSearch.imageUrl)
+
+            root.setOnClickListener {listener.onClick(itemSearch)}
+
         }
     }
 

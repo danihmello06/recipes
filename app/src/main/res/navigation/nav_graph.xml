@@ -16,9 +16,9 @@
             app:destination="@id/fragment_recipe">
             <argument
                 android:name="SLUG"
+                android:defaultValue="pudim-de-mandioca-com-cumaru"
                 app:argType="string"
-                app:nullable="false"/>
-
+                />
         </action>
     </fragment>
 
@@ -32,10 +32,7 @@
         <action
             android:id="@+id/action_recipe_to_homesearch"
             app:destination="@id/fragment_search">
-            <argument
-                android:name="SLUGDOIS"
-                app:argType="string"
-                app:nullable="false"/>
+
         </action>
 
     </fragment>

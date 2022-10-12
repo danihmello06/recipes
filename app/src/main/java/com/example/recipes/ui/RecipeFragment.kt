@@ -1,6 +1,7 @@
 package com.example.recipes.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,42 +10,41 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.DEFAULT_ARGS_KEY
 import androidx.navigation.fragment.navArgs
 import com.example.recipes.databinding.FragmentRecipeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipeFragment : Fragment() {
 
     private var _binding: FragmentRecipeBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: AppViewModel by viewModels()
-
-    private var recipeSlug: String? = ""
-
+    private val recipeViewModel: AppViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentRecipeBinding.inflate(inflater, container, false)
-        recipeSlug = viewModel.theSlug
-        recipeSlug?.let { setContent(it) }
+
+        val recipeSlug = arguments?.getString("SLUG") ?: "slug"
+        recipeViewModel.buildRecipe(recipeSlug)
 
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recipeViewModel.apply {
+            setupRecipeResponseObserver()
+        }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
+    private fun AppViewModel.setupRecipeResponseObserver() {
+        recipeResult.observe(
+            viewLifecycleOwner
+        ) {
+            Log.d("RECIPE DATA: ", it.toString())
+        }
     }
-
-    private fun setContent(slug: String) {
-        binding.slug.text = slug
-    }
-
-
 
 }

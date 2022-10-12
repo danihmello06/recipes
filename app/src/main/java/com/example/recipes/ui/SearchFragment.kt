@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.recipes.ItemSearchClickListener
@@ -35,7 +36,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel.apply {
-            setupResponseObserver()
+            setupSearchResponseObserver()
         }
     }
 
@@ -59,7 +60,7 @@ class SearchFragment : Fragment() {
         )
     }
 
-    private fun AppViewModel.setupResponseObserver() {
+    private fun AppViewModel.setupSearchResponseObserver() {
         searchResult.observe(
             viewLifecycleOwner
         ) {
@@ -72,9 +73,8 @@ class SearchFragment : Fragment() {
 
     private fun itemSearchClickListener() = object : ItemSearchClickListener {
         override fun onClick(searchItem: Search) {
-            val action = SearchFragmentDirections.actionHomesearchToRecipe(searchItem.slug)
-            viewModel.passSlug(searchItem.slug)
-            findNavController().navigate(action)
+            val bundle = bundleOf("SLUG" to searchItem.slug)
+            findNavController().navigate(SearchFragmentDirections.actionHomesearchToRecipe().actionId, bundle)
         }
 
     }

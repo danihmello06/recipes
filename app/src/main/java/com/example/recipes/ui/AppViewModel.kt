@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.recipes.data.Recipe
 import com.example.recipes.data.Search
 import com.example.recipes.domain.RecipesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,7 +18,9 @@ class AppViewModel @Inject constructor(
 
     private val _search = MutableLiveData<List<Search>>()
     val searchResult: LiveData<List<Search>> get() = _search
-    var theSlug: String? = ""
+
+    private val _recipe = MutableLiveData<Recipe>()
+    val recipeResult: LiveData<Recipe> get() = _recipe
 
     fun requestSearch(searchedWord: String) {
         viewModelScope.launch {
@@ -27,15 +30,11 @@ class AppViewModel @Inject constructor(
         }
     }
 
-    fun passSlug(informedSlug: String) {
-        theSlug = informedSlug
-    }
-
 
     fun buildRecipe(searchedRecipe: String) {
         viewModelScope.launch {
-            recipesUseCase.getRecipe(searchedRecipe)
-
+            val recipeInfo = recipesUseCase.getRecipe(searchedRecipe)
+            _recipe.postValue(recipeInfo)
         }
 
     }
