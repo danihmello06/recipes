@@ -1,8 +1,4 @@
 
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
-d
-4app/src/main/java/com/example/recipes/data/Recipe.kt,f\1\f125a5ea7cba8609fb37b175d4f6e5ddd600822b
 k
 ;app/src/main/java/com/example/recipes/RecipesApplication.kt,3\3\33798edad1d8e511eb7db4c3ffc8b49794a0e71b
 d
@@ -18,3 +14,21 @@ A
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 p
 @app/src/main/java/com/example/recipes/ItemSearchClickListener.kt,2\c\2c271ca93ed73a767918e581eea227f6573f5d2b
+q
+Aapp/src/main/java/com/example/recipes/ui/adapter/SearchAdapter.kt,7\4\74adfa6f7457b349dc0883708d0a90770371676b
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+j
+:app/src/main/java/com/example/recipes/ui/SearchFragment.kt,c\3\c314fe5224a3ac4f83e7e52400fca55e83ea80ab
+
+Oapp/src/main/java/com/example/recipes/ui/adapter/viewholder/SearchViewHolder.kt,c\c\cc01feceab1f521a8ba89b218d2e0ef70f9e88a9
+h
+8app/src/main/java/com/example/recipes/ui/AppViewModel.kt,e\f\efbccd404bb4315948b7ea75820df1a9d80fa3bb
+j
+:app/src/main/java/com/example/recipes/ui/RecipeFragment.kt,5\f\5fcae79141073639aedcfceaaaf3e836629fec7c
+e
+5app/src/main/java/com/example/recipes/MainActivity.kt,9\6\96296f003e95d6d83b4bd647ac1feab241e1b554
+d
+4app/src/main/java/com/example/recipes/data/Recipe.kt,f\1\f125a5ea7cba8609fb37b175d4f6e5ddd600822b
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
