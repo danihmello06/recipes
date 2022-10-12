@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.DEFAULT_ARGS_KEY
-import androidx.navigation.fragment.navArgs
+import com.example.recipes.Utils.loadImage
 import com.example.recipes.databinding.FragmentRecipeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,6 +42,8 @@ class RecipeFragment : Fragment() {
         recipeResult.observe(
             viewLifecycleOwner
         ) {
+            binding.recipeImage.loadImage(it.imageUrl)
+            binding.recipeTitle.text = it.title
             Log.d("RECIPE DATA: ", it.toString())
         }
     }

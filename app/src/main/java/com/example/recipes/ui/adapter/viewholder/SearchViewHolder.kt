@@ -1,12 +1,8 @@
 package com.example.recipes.ui.adapter.viewholder
 
-import android.widget.ImageView
-import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.bumptech.glide.Glide
 import com.example.recipes.ItemSearchClickListener
-import com.example.recipes.R
+import com.example.recipes.Utils.loadImage
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.SearchItemBinding
 
@@ -23,6 +19,7 @@ class SearchViewHolder(
 
         with(binding) {
             searchTitle.text = itemSearch.title
+
             searchImage.loadImage(itemSearch.imageUrl)
 
             root.setOnClickListener {listener.onClick(itemSearch)}
@@ -30,17 +27,5 @@ class SearchViewHolder(
         }
     }
 
-    private fun ImageView.loadImage(
-        imageUrl: String?,
-        @DrawableRes placeholder: Int? = null,
-        showPlaceholder: Boolean = true,
-    ) {
-        load(imageUrl) {
-            if (showPlaceholder) {
-                placeholder(placeholder ?: R.drawable.image_placeholder)
-            }
-            fallback(placeholder ?: R.drawable.image_placeholder)
-            error(placeholder ?: R.drawable.image_placeholder)
-        }
-    }
+
 }
