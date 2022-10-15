@@ -8,7 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.example.recipes.Utils.loadImage
+import com.example.recipes.data.Recipe
 import com.example.recipes.databinding.FragmentRecipeBinding
+import com.example.recipes.ui.adapter.RecipeIngredientAdapter
+import com.example.recipes.ui.adapter.RecipeStepAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -42,9 +45,16 @@ class RecipeFragment : Fragment() {
         recipeResult.observe(
             viewLifecycleOwner
         ) {
-            binding.recipeImage.loadImage(it.imageUrl)
-            binding.recipeTitle.text = it.title
-            Log.d("RECIPE DATA: ", it.toString())
+            createRecipeContent(it)
+        }
+    }
+
+    private fun createRecipeContent(recipe: Recipe) {
+        with(binding) {
+            recipeImage.loadImage(recipe.imageUrl)
+            recipeTitle.text = recipe.title
+//            stepsRecycler.setHasFixedSize(true)
+            stepsRecycler.adapter = RecipeStepAdapter(recipe.steps)
         }
     }
 

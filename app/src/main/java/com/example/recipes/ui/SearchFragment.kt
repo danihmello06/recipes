@@ -64,7 +64,7 @@ class SearchFragment : Fragment() {
         searchResult.observe(
             viewLifecycleOwner
         ) {
-            binding.searchRecycler.setHasFixedSize(true)
+//            binding.searchRecycler.setHasFixedSize(true)
             binding.searchRecycler.adapter = SearchAdapter(
                 it, itemSearchClickListener()
             )

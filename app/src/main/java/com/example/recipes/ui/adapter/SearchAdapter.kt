@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.ItemSearchClickListener
 import com.example.recipes.data.Search
-import com.example.recipes.databinding.SearchItemBinding.inflate
+import com.example.recipes.databinding.SearchItemBinding
 import com.example.recipes.ui.adapter.viewholder.SearchViewHolder
 
 class SearchAdapter(
@@ -17,7 +17,7 @@ class SearchAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return SearchViewHolder(
-            inflate(layoutInflater, parent, false),
+            SearchItemBinding.inflate(layoutInflater, parent, false),
             searchClickListener
         )
     }
