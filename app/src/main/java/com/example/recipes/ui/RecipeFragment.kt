@@ -53,7 +53,6 @@ class RecipeFragment : Fragment() {
         with(binding) {
             recipeImage.loadImage(recipe.imageUrl)
             recipeTitle.text = recipe.title
-//            stepsRecycler.setHasFixedSize(true)
             stepsRecycler.adapter = RecipeStepAdapter(recipe.steps)
         }
     }

@@ -26,16 +26,13 @@ class AppViewModel @Inject constructor(
         viewModelScope.launch {
             val searchInfo = recipesUseCase.getSearchResult(searchedWord)
             _search.postValue(searchInfo)
-
         }
     }
-
 
     fun buildRecipe(searchedRecipe: String) {
         viewModelScope.launch {
             val recipeInfo = recipesUseCase.getRecipe(searchedRecipe)
             _recipe.postValue(recipeInfo)
         }
-
     }
 }

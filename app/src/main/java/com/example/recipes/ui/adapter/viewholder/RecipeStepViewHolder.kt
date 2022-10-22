@@ -22,7 +22,7 @@ class RecipeStepViewHolder(
     ) {
         with(binding) {
             stepTitle.text = stepItem.title
-//            ingredientsRecycler.setHasFixedSize(true)
+            ingredientsRecycler.setHasFixedSize(false)
             preparationItem.text = stepItem.preparation
             ingredientsRecycler.adapter = ingredientAdapter
         }
