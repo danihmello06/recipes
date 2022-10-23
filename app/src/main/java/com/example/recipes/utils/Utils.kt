@@ -1,8 +1,9 @@
-package com.example.recipes
+package com.example.recipes.utils
 
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import coil.load
+import com.example.recipes.R
 
 object Utils {
 

@@ -1,6 +1,7 @@
 package com.example.recipes.ui.adapter.viewholder
 
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.data.Recipe
 import com.example.recipes.databinding.StepItemBinding
@@ -24,9 +25,13 @@ class RecipeStepViewHolder(
         ingredientAdapter: RecipeIngredientAdapter,
         preparationAdapter: RecipePreparationAdapter
     ) {
-
         with(binding) {
-            stepTitle.text = stepItem.title
+            if(stepItem.title.isNullOrBlank()) {
+                stepTitle.visibility = View.GONE
+            } else {
+                stepTitle.visibility = View.VISIBLE
+                stepTitle.text = stepItem.title
+            }
             ingredientsRecycler.adapter = ingredientAdapter
             preparationRecycler.adapter = preparationAdapter
         }

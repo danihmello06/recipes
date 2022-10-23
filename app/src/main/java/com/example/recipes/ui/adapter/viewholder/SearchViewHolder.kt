@@ -2,7 +2,7 @@ package com.example.recipes.ui.adapter.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.ItemSearchClickListener
-import com.example.recipes.Utils.loadImage
+import com.example.recipes.utils.Utils.loadImage
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.SearchItemBinding
 

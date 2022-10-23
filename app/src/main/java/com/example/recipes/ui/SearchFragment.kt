@@ -13,6 +13,7 @@ import com.example.recipes.ItemSearchClickListener
 import com.example.recipes.data.Search
 import com.example.recipes.databinding.FragmentSearchBinding
 import com.example.recipes.ui.adapter.SearchAdapter
+import com.example.recipes.ui.model.SearchResult
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -61,13 +62,36 @@ class SearchFragment : Fragment() {
     }
 
     private fun AppViewModel.setupSearchResponseObserver() {
-        searchResult.observe(
-            viewLifecycleOwner
-        ) {
-            binding.searchRecycler.setHasFixedSize(false)
-            binding.searchRecycler.adapter = SearchAdapter(
-                it, itemSearchClickListener()
-            )
+        searchResult.observe(viewLifecycleOwner) {
+            when(it) {
+                is SearchResult.Completed -> {
+                    hideLoading()
+                    searchResponse.value?.let { response ->
+                        binding.searchRecycler.setHasFixedSize(false)
+                        binding.searchRecycler.adapter = SearchAdapter(
+                            response, itemSearchClickListener()
+                        )
+                    }
+                }
+                is SearchResult.Loading -> {
+                    showLoading()
+                }
+                is SearchResult.Failure -> {
+                    hideLoading()
+                }
+            }
+        }
+    }
+
+    private fun showLoading() {
+        with(binding) {
+            searchProgressBar.visibility = View.VISIBLE
+        }
+    }
+
+    private fun hideLoading() {
+        with(binding) {
+            searchProgressBar.visibility = View.GONE
         }
     }
 
@@ -76,6 +100,5 @@ class SearchFragment : Fragment() {
             val bundle = bundleOf("SLUG" to searchItem.slug)
             findNavController().navigate(SearchFragmentDirections.actionHomesearchToRecipe().actionId, bundle)
         }
-
     }
 }

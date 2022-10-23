@@ -1,17 +1,21 @@
 package com.example.recipes.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
-import com.example.recipes.Utils.loadImage
+import androidx.navigation.fragment.findNavController
+import com.example.recipes.utils.Utils.loadImage
 import com.example.recipes.data.Recipe
 import com.example.recipes.databinding.FragmentRecipeBinding
-import com.example.recipes.ui.adapter.RecipeIngredientAdapter
 import com.example.recipes.ui.adapter.RecipeStepAdapter
+import com.example.recipes.ui.adapter.SearchAdapter
+import com.example.recipes.ui.model.RecipeResult
+import com.example.recipes.ui.model.SearchResult
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -20,6 +24,7 @@ class RecipeFragment : Fragment() {
     private var _binding: FragmentRecipeBinding? = null
     private val binding get() = _binding!!
     private val recipeViewModel: AppViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,13 +44,51 @@ class RecipeFragment : Fragment() {
         recipeViewModel.apply {
             setupRecipeResponseObserver()
         }
+        binding.arrowBack.setOnClickListener {
+            findNavController().navigate(RecipeFragmentDirections.actionRecipeToHomesearch())
+        }
     }
 
     private fun AppViewModel.setupRecipeResponseObserver() {
-        recipeResult.observe(
-            viewLifecycleOwner
-        ) {
-            createRecipeContent(it)
+        recipeResult.observe(viewLifecycleOwner) {
+            when(it) {
+                is RecipeResult.Completed -> {
+                    hideLoading()
+                    showElements()
+                    recipeResponse.value?.let { response ->
+                        createRecipeContent(response)
+                    }
+                }
+                is RecipeResult.Loading -> {
+                    showLoading()
+                    hideElements()
+                }
+                is RecipeResult.Failure -> {
+                    hideLoading()
+                }
+            }
+        }
+    }
+
+    private fun hideElements() {
+        binding.recipeTitle.visibility = View.GONE
+        binding.recipeImage.visibility = View.GONE
+    }
+
+    private fun showElements() {
+        binding.recipeTitle.visibility = View.VISIBLE
+        binding.recipeImage.visibility = View.VISIBLE
+    }
+
+    private fun showLoading() {
+        with(binding) {
+            recipeProgressBar.visibility = View.VISIBLE
+        }
+    }
+
+    private fun hideLoading() {
+        with(binding) {
+            recipeProgressBar.visibility = View.GONE
         }
     }
 
@@ -56,5 +99,6 @@ class RecipeFragment : Fragment() {
             stepsRecycler.adapter = RecipeStepAdapter(recipe.steps)
         }
     }
+
 
 }
