@@ -18,7 +18,7 @@ data class Recipe(
     data class Steps(
         val title: String,
         val ingredients: List<String>,
-        val preparation: String
+        val preparation: List<String>
     ): Parcelable
 
 

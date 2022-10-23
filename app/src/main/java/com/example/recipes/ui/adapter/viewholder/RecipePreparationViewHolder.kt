@@ -7,8 +7,9 @@ class RecipePreparationViewHolder (
     private val binding: PreparationItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(preparationItem: String) {
+    fun bind(preparationItem: String, position: Int) {
         binding.preparationItem.text = preparationItem
+        binding.preparationNumber.text = position.toString()
     }
 
 }

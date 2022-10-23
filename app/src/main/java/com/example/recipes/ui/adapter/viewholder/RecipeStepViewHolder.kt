@@ -1,9 +1,11 @@
 package com.example.recipes.ui.adapter.viewholder
 
+import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipes.data.Recipe
 import com.example.recipes.databinding.StepItemBinding
 import com.example.recipes.ui.adapter.RecipeIngredientAdapter
+import com.example.recipes.ui.adapter.RecipePreparationAdapter
 
 class RecipeStepViewHolder(
     private val binding: StepItemBinding
@@ -12,19 +14,21 @@ class RecipeStepViewHolder(
     fun bind(
         recipeStepItem: Recipe.Steps,
         ingredientAdapter: RecipeIngredientAdapter,
+        preparationAdapter: RecipePreparationAdapter
     ) {
-        setContent(recipeStepItem, ingredientAdapter)
+        setContent(recipeStepItem, ingredientAdapter, preparationAdapter)
     }
 
     private fun setContent(
         stepItem: Recipe.Steps,
         ingredientAdapter: RecipeIngredientAdapter,
+        preparationAdapter: RecipePreparationAdapter
     ) {
+
         with(binding) {
             stepTitle.text = stepItem.title
-            ingredientsRecycler.setHasFixedSize(false)
-            preparationItem.text = stepItem.preparation
             ingredientsRecycler.adapter = ingredientAdapter
+            preparationRecycler.adapter = preparationAdapter
         }
     }
 }

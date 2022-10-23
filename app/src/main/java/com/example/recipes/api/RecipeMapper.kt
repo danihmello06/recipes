@@ -27,9 +27,13 @@ object RecipeMapper {
                 Recipe.Steps(
                     step.title,
                     step.ingredients,
-                    step.preparation
+                    formatStep(step.preparation)
                 )
             }
         )
+    }
+
+    private fun formatStep(preparation: String): List<String> {
+        return preparation.split('\n').filter { it.isNotBlank() }
     }
 }

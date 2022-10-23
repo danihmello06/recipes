@@ -4,14 +4,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+<!--    <ImageView-->
+<!--        android:id="@+id/circle_item_preparation"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/circle_ingredient_item"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
+
+    <TextView
+        android:id="@+id/preparationNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubik_regular"
+        android:text="2"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/preparationBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="28dp"
+        android:src="@drawable/preparation_item_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
     <TextView
         android:id="@+id/preparationItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Preparation 123"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:paddingStart="12dp"
+        android:paddingEnd="34dp"
+        android:paddingBottom="12dp"
+        android:textSize="16dp"
+        android:justificationMode="inter_word"
+        android:text="Preparation 123Preparation 123Preparation 123Preparation 123Preparation 123Preparation 1222"
+        app:layout_constraintStart_toEndOf="@id/preparationBar"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,8 @@ class RecipeStepAdapter(
 
     override fun onBindViewHolder(holder: RecipeStepViewHolder, position: Int) {
         val ingredientAdapter = RecipeIngredientAdapter(stepList[position].ingredients)
-        holder.bind(stepList[position], ingredientAdapter)
+        val preparationAdapter = RecipePreparationAdapter(stepList[position].preparation)
+        holder.bind(stepList[position], ingredientAdapter, preparationAdapter)
     }
 
     override fun getItemCount(): Int = stepList.size

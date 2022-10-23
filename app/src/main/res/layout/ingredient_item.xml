@@ -4,11 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/circle_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle_ingredient_item"
+        app:layout_constraintBottom_toBottomOf="@id/ingredientItem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ingredientItem"/>
+
     <TextView
         android:id="@+id/ingredientItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textSize="16dp"
         android:text="Ingredient 123"
+        app:layout_constraintStart_toEndOf="@id/circle_item"
         app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
