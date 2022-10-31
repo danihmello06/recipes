@@ -4,7 +4,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+    
+    <ImageView
+        android:id="@+id/stepItemBarFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/step_item_horizontal_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/stepTitle"
+        app:layout_constraintTop_toTopOf="@id/stepTitle"
+        app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
     <TextView
         android:id="@+id/stepTitle"
         android:layout_width="wrap_content"
@@ -13,10 +22,21 @@
         android:fontFamily="@font/rubik_medium"
         android:layout_marginTop="18dp"
         android:textSize="@dimen/recipe_page_subtitle_text_size"
+        android:textColor="#5FC5DA"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ingredientsTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/stepItemBarSecond"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/step_item_horizontal_bar"
+        app:layout_constraintStart_toEndOf="@id/stepTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/stepTitle"
+        app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
 
     <TextView
         android:id="@+id/ingredientsTitle"
@@ -25,6 +45,7 @@
         android:layout_marginTop="18dp"
         android:text="Ingredientes"
         android:textSize="@dimen/recipe_page_subtitle_text_size"
+        android:textColor="#252525"
         android:fontFamily="@font/rubik_medium"
         app:layout_constraintTop_toBottomOf="@id/stepTitle"
         app:layout_constraintBottom_toTopOf="@id/ingredientsRecycler"
@@ -48,6 +69,7 @@
         android:layout_height="wrap_content"
         android:text="Modo de preparo"
         android:textSize="@dimen/recipe_page_subtitle_text_size"
+        android:textColor="#252525"
         android:fontFamily="@font/rubik_medium"
         app:layout_constraintTop_toBottomOf="@id/ingredientsRecycler"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -58,7 +80,6 @@
         android:layout_height="wrap_content"
         android:paddingTop="14dp"
         android:clipToPadding="false"
-        android:paddingBottom="20dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/preparationTitle"

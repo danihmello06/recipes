@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-  <solid android:color="#86B64E"/>
+  <solid android:color="#5FC5DA"/>
 
   <size
-      android:width="2dp"
-      android:height="26dp"/>
+      android:width="68dp"
+      android:height="1dp"/>
 
 </shape>

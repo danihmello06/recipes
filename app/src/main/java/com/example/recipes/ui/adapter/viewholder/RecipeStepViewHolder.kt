@@ -27,10 +27,14 @@ class RecipeStepViewHolder(
     ) {
         with(binding) {
             if(stepItem.title.isNullOrBlank()) {
+                stepItemBarFirst.visibility = View.GONE
+                stepItemBarSecond.visibility = View.GONE
                 stepTitle.visibility = View.GONE
             } else {
+                stepItemBarFirst.visibility = View.VISIBLE
+                stepItemBarSecond.visibility = View.VISIBLE
                 stepTitle.visibility = View.VISIBLE
-                stepTitle.text = stepItem.title
+                stepTitle.text = stepItem.title.uppercase()
             }
             ingredientsRecycler.adapter = ingredientAdapter
             preparationRecycler.adapter = preparationAdapter

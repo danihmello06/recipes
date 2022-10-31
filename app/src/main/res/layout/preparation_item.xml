@@ -4,14 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/circle_item_preparation"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:src="@drawable/circle_ingredient_item"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
     <TextView
         android:id="@+id/preparationNumber"
         android:layout_width="wrap_content"
@@ -30,7 +22,6 @@
         android:src="@drawable/preparation_item_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-
 
     <TextView
         android:id="@+id/preparationItem"

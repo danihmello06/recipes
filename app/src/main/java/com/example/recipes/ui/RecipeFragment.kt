@@ -45,7 +45,8 @@ class RecipeFragment : Fragment() {
             setupRecipeResponseObserver()
         }
         binding.arrowBack.setOnClickListener {
-            findNavController().navigate(RecipeFragmentDirections.actionRecipeToHomesearch())
+            activity?.onBackPressed()
+//            findNavController().navigate(RecipeFragmentDirections.actionRecipeToHomesearch())
         }
     }
 

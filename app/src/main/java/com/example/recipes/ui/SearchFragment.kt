@@ -28,8 +28,8 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        setupListener()
-
+        val wordSearched = arguments?.getString("WORD") ?: "word"
+        viewModel.requestSearch(wordSearched)
         return binding.root
     }
 
@@ -39,26 +39,6 @@ class SearchFragment : Fragment() {
         viewModel.apply {
             setupSearchResponseObserver()
         }
-    }
-
-    private fun setupListener() {
-        val searchView = binding.searchToolbar.searchButton
-        searchView.setOnQueryTextListener(
-            object : SearchView.OnQueryTextListener,
-            android.widget.SearchView.OnQueryTextListener {
-
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    query?.let {
-                        viewModel.requestSearch(it)
-                    }
-                    return false
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    return false
-                }
-            }
-        )
     }
 
     private fun AppViewModel.setupSearchResponseObserver() {
@@ -98,7 +78,7 @@ class SearchFragment : Fragment() {
     private fun itemSearchClickListener() = object : ItemSearchClickListener {
         override fun onClick(searchItem: Search) {
             val bundle = bundleOf("SLUG" to searchItem.slug)
-            findNavController().navigate(SearchFragmentDirections.actionHomesearchToRecipe().actionId, bundle)
+            findNavController().navigate(SearchFragmentDirections.actionSearchToRecipe().actionId, bundle)
         }
     }
 }

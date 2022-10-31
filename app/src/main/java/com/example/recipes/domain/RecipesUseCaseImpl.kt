@@ -1,8 +1,5 @@
 package com.example.recipes.domain
 
-import android.util.Log
-import com.example.recipes.api.RecipeResponse
-import com.example.recipes.api.SearchResponse
 import com.example.recipes.data.Recipe
 import com.example.recipes.data.Search
 import javax.inject.Inject
