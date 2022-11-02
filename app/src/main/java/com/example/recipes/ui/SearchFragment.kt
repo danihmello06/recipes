@@ -22,13 +22,14 @@ class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private val viewModel: AppViewModel by viewModels()
+    private var wordSearched: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        val wordSearched = arguments?.getString("WORD") ?: "word"
+        wordSearched = arguments?.getString("WORD") ?: "word"
         viewModel.requestSearch(wordSearched)
         return binding.root
     }
@@ -39,12 +40,17 @@ class SearchFragment : Fragment() {
         viewModel.apply {
             setupSearchResponseObserver()
         }
+
+        binding.searchArrowBack.setOnClickListener {
+            activity?.onBackPressed()
+        }
     }
 
     private fun AppViewModel.setupSearchResponseObserver() {
         searchResult.observe(viewLifecycleOwner) {
             when(it) {
                 is SearchResult.Completed -> {
+                    setTitle(wordSearched)
                     hideLoading()
                     searchResponse.value?.let { response ->
                         binding.searchRecycler.setHasFixedSize(false)
@@ -66,13 +72,27 @@ class SearchFragment : Fragment() {
     private fun showLoading() {
         with(binding) {
             searchProgressBar.visibility = View.VISIBLE
+            searchBgImage.visibility = View.INVISIBLE
+            searchBgGradient.visibility = View.INVISIBLE
+            showingResultsText.visibility = View.INVISIBLE
+            searchRecipeTitle.visibility = View.INVISIBLE
+            searchArrowBack.visibility = View.GONE
         }
     }
 
     private fun hideLoading() {
         with(binding) {
             searchProgressBar.visibility = View.GONE
+            searchBgImage.visibility = View.VISIBLE
+            searchBgGradient.visibility = View.VISIBLE
+            showingResultsText.visibility = View.VISIBLE
+            searchRecipeTitle.visibility = View.VISIBLE
+            searchArrowBack.visibility = View.VISIBLE
         }
+    }
+
+    private fun setTitle(title: String) {
+        binding.searchRecipeTitle.text = title
     }
 
     private fun itemSearchClickListener() = object : ItemSearchClickListener {
