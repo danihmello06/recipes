@@ -26,9 +26,9 @@
             android:id="@+id/arrowBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/arrow_back"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/arrow_back_squared"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
@@ -36,7 +36,7 @@
             android:id="@+id/recipeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/rubik_medium"
+            android:fontFamily="@font/dmserifdisplay_regular"
             android:layout_marginTop="12dp"
             android:layout_marginStart="12dp"
             android:textColor="#252525"

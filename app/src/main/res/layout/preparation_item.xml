@@ -8,18 +8,10 @@
         android:id="@+id/preparationNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/rubik_regular"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#F2994A"
         android:text="2"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/preparationBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="28dp"
-        android:src="@drawable/preparation_item_bar"
+        android:textSize="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -28,12 +20,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingStart="12dp"
-        android:paddingEnd="34dp"
+        android:paddingEnd="24dp"
         android:paddingBottom="12dp"
-        android:textSize="16dp"
+        android:layout_marginTop="6dp"
+        android:textColor="#333333"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="12dp"
         android:justificationMode="inter_word"
         android:text="Preparation 123Preparation 123Preparation 123Preparation 123Preparation 123Preparation 1222"
-        app:layout_constraintStart_toEndOf="@id/preparationBar"
+        app:layout_constraintStart_toEndOf="@id/preparationNumber"
         app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
