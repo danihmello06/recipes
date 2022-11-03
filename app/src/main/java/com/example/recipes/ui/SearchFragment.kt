@@ -50,9 +50,9 @@ class SearchFragment : Fragment() {
         searchResult.observe(viewLifecycleOwner) {
             when(it) {
                 is SearchResult.Completed -> {
-                    setTitle(wordSearched)
-                    hideLoading()
                     searchResponse.value?.let { response ->
+                        setTitle(wordSearched)
+                        hideLoading()
                         binding.searchRecycler.setHasFixedSize(false)
                         binding.searchRecycler.adapter = SearchAdapter(
                             response, itemSearchClickListener()
@@ -72,10 +72,10 @@ class SearchFragment : Fragment() {
     private fun showLoading() {
         with(binding) {
             searchProgressBar.visibility = View.VISIBLE
-            searchBgImage.visibility = View.INVISIBLE
-            searchBgGradient.visibility = View.INVISIBLE
-            showingResultsText.visibility = View.INVISIBLE
-            searchRecipeTitle.visibility = View.INVISIBLE
+            searchBgImage.visibility = View.GONE
+            searchBgGradient.visibility = View.GONE
+            showingResultsText.visibility = View.GONE
+            searchRecipeTitle.visibility = View.GONE
             searchArrowBack.visibility = View.GONE
         }
     }

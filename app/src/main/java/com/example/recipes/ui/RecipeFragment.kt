@@ -55,14 +55,12 @@ class RecipeFragment : Fragment() {
             when(it) {
                 is RecipeResult.Completed -> {
                     hideLoading()
-                    showElements()
                     recipeResponse.value?.let { response ->
                         createRecipeContent(response)
                     }
                 }
                 is RecipeResult.Loading -> {
                     showLoading()
-                    hideElements()
                 }
                 is RecipeResult.Failure -> {
                     hideLoading()
@@ -71,25 +69,21 @@ class RecipeFragment : Fragment() {
         }
     }
 
-    private fun hideElements() {
-        binding.recipeTitle.visibility = View.GONE
-        binding.recipeImage.visibility = View.GONE
-    }
-
-    private fun showElements() {
-        binding.recipeTitle.visibility = View.VISIBLE
-        binding.recipeImage.visibility = View.VISIBLE
-    }
-
     private fun showLoading() {
         with(binding) {
             recipeProgressBar.visibility = View.VISIBLE
+            binding.recipeTitle.visibility = View.GONE
+            binding.recipeImage.visibility = View.GONE
+            binding.arrowBack.visibility = View.GONE
         }
     }
 
     private fun hideLoading() {
         with(binding) {
             recipeProgressBar.visibility = View.GONE
+            binding.recipeTitle.visibility = View.VISIBLE
+            binding.recipeImage.visibility = View.VISIBLE
+            binding.arrowBack.visibility = View.VISIBLE
         }
     }
 
