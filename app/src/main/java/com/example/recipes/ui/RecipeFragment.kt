@@ -5,17 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.OnBackPressedCallback
-import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.example.recipes.utils.Utils.loadImage
 import com.example.recipes.data.Recipe
 import com.example.recipes.databinding.FragmentRecipeBinding
 import com.example.recipes.ui.adapter.RecipeStepAdapter
-import com.example.recipes.ui.adapter.SearchAdapter
 import com.example.recipes.ui.model.RecipeResult
-import com.example.recipes.ui.model.SearchResult
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -46,7 +41,6 @@ class RecipeFragment : Fragment() {
         }
         binding.arrowBack.setOnClickListener {
             activity?.onBackPressed()
-//            findNavController().navigate(RecipeFragmentDirections.actionRecipeToHomesearch())
         }
     }
 
@@ -63,7 +57,7 @@ class RecipeFragment : Fragment() {
                     showLoading()
                 }
                 is RecipeResult.Failure -> {
-                    hideLoading()
+                    showErrorScreen()
                 }
             }
         }
@@ -83,6 +77,17 @@ class RecipeFragment : Fragment() {
             recipeProgressBar.visibility = View.GONE
             binding.recipeTitle.visibility = View.VISIBLE
             binding.recipeImage.visibility = View.VISIBLE
+            binding.arrowBack.visibility = View.VISIBLE
+        }
+    }
+
+    private fun showErrorScreen() {
+        with(binding) {
+            recipeProgressBar.visibility = View.GONE
+            recipeTitle.visibility = View.GONE
+            recipeImage.visibility = View.GONE
+            errorImage.visibility = View.VISIBLE
+            errorMessage.visibility = View.VISIBLE
             binding.arrowBack.visibility = View.VISIBLE
         }
     }

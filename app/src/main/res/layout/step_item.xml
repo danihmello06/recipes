@@ -11,29 +11,29 @@
         android:layout_height="wrap_content"
         android:src="@drawable/step_item_horizontal_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/stepTitle"
         app:layout_constraintTop_toTopOf="@id/stepTitle"
         app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
+
     <TextView
         android:id="@+id/stepTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Step 01"
+        android:text="Step 01 Step 01 Step 01 Step 01 Step 01 Step 01 "
         android:fontFamily="@font/poppins_bold"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
         android:textSize="@dimen/recipe_page_subtitle_text_size"
-        android:textColor="#5FC5DA"
+        android:textColor="#333333"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/ingredientsTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/stepItemBarFirst"
+        app:layout_constraintEnd_toStartOf="@id/stepItemBarSecond"/>
 
     <ImageView
         android:id="@+id/stepItemBarSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/step_item_horizontal_bar"
-        app:layout_constraintStart_toEndOf="@id/stepTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/stepTitle"
         app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
@@ -42,6 +42,7 @@
         android:id="@+id/ingredientIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:src="@drawable/icon_ingredient"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/stepTitle"/>
@@ -96,8 +97,6 @@
         android:layout_height="wrap_content"
         android:paddingTop="14dp"
         android:clipToPadding="false"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/preparationTitle"
