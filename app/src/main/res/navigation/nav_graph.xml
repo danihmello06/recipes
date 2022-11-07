@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_home"
-        android:name="com.example.recipes.ui.HomeFragment"
+        android:name="danihmello.tcc.recipes.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
 
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.example.recipes.ui.SearchFragment"
+        android:name="danihmello.tcc.recipes.ui.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search">
 
@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/fragment_recipe"
-        android:name="com.example.recipes.ui.RecipeFragment"
+        android:name="danihmello.tcc.recipes.ui.RecipeFragment"
         android:label="RecipeFragment"
         tools:layout="@layout/fragment_recipe">
 

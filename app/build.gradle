@@ -12,7 +12,7 @@ android {
     compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.example.recipes"
+        applicationId "danihmello.tcc.recipes"
         minSdk rootProject.minSdkVersion
         targetSdk rootProject.targetSdkVersion
         versionCode 1
@@ -43,7 +43,7 @@ android {
             }
         }
     }
-    namespace 'com.example.recipes'
+    namespace 'danihmello.tcc.recipes'
 }
 
 dependencies {
