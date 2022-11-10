@@ -64,10 +64,11 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@drawable/bg_search_rounded"
-            android:clickable="true"
-            android:layout_marginHorizontal="16dp"
-            android:layoutDirection="rtl"
-            android:searchIcon="@drawable/search_icon"/>
+            android:queryHint="Encontre sua receita aqui"
+            android:searchIcon="@drawable/search_icon"
+            android:iconifiedByDefault="false"
+            android:focusable="true"
+            android:layout_marginHorizontal="16dp" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>
