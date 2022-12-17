@@ -20,7 +20,6 @@ class RecipeFragment : Fragment() {
     private val binding get() = _binding!!
     private val recipeViewModel: AppViewModel by viewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,7 +27,9 @@ class RecipeFragment : Fragment() {
         _binding = FragmentRecipeBinding.inflate(inflater, container, false)
 
         val recipeSlug = arguments?.getString("SLUG") ?: "slug"
-        recipeViewModel.buildRecipe(recipeSlug)
+        val recipeAuthor = arguments?.getString("AUTHOR") ?: "author"
+
+        recipeViewModel.buildRecipe(recipeSlug, recipeAuthor)
 
         return binding.root
     }
@@ -99,6 +100,4 @@ class RecipeFragment : Fragment() {
             stepsRecycler.adapter = RecipeStepAdapter(recipe.steps)
         }
     }
-
-
 }

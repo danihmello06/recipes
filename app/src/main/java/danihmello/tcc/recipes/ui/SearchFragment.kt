@@ -96,7 +96,7 @@ class SearchFragment : Fragment() {
     private fun itemSearchClickListener() = object :
         danihmello.tcc.recipes.ItemSearchClickListener {
         override fun onClick(searchItem: Search) {
-            val bundle = bundleOf("SLUG" to searchItem.slug)
+            val bundle = bundleOf("SLUG" to searchItem.slug, "AUTHOR" to searchItem.author)
             findNavController().navigate(SearchFragmentDirections.actionSearchToRecipe().actionId, bundle)
         }
     }

@@ -15,16 +15,10 @@ class SearchViewHolder(
     }
 
     private fun setContent(itemSearch: Search) {
-
         with(binding) {
             searchTitle.text = itemSearch.title
-
             searchItemImage.loadImage(itemSearch.imageUrl)
-
             root.setOnClickListener {listener.onClick(itemSearch)}
-
         }
     }
-
-
 }

@@ -14,8 +14,8 @@ class RecipesRepositoryImpl @Inject constructor(
         return RecipeMapper.mapSearch(response)
     }
 
-    override suspend fun getRecipe(searchedRecipe: String): Recipe {
-        val response = service.recipe(searchedRecipe)
+    override suspend fun getRecipe(searchedRecipe: String, author: String): Recipe {
+        val response = service.recipe(searchedRecipe, author)
         return RecipeMapper.mapRecipe(response)
     }
 }

@@ -8,8 +8,10 @@ object RecipeMapper {
     fun mapSearch(searchResponse: List<SearchResponse>): List<Search> {
         return searchResponse.map { search ->
             Search(
+                search.author,
+                search.image_url,
+                search.index,
                 search.slug,
-                search.imageUrl,
                 search.title
             )
         }
@@ -18,11 +20,11 @@ object RecipeMapper {
     fun mapRecipe(recipeResponse: RecipeResponse): Recipe {
         return Recipe(
             recipeResponse.title,
-            recipeResponse.imageUrl,
+            recipeResponse.image_url,
             recipeResponse.slug,
             recipeResponse.author,
             recipeResponse.serves,
-            recipeResponse.prepareTime,
+            recipeResponse.prepare_time,
             recipeResponse.steps.map { step ->
                 Recipe.Steps(
                     step.title,

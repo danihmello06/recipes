@@ -12,7 +12,7 @@ class RecipesUseCaseImpl @Inject constructor(
         return repository.getSearchResult(searchedWord)
     }
 
-    override suspend fun getRecipe(searchedRecipe: String): Recipe {
-        return repository.getRecipe(searchedRecipe)
+    override suspend fun getRecipe(searchedRecipe: String, author: String): Recipe {
+        return repository.getRecipe(searchedRecipe, author)
     }
 }

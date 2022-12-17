@@ -16,8 +16,8 @@ interface RecipeApi {
 
     @GET("/recipe")
     suspend fun recipe(
-        @Query("slug") slug: String
+        @Query("slug") slug: String,
+        @Query("author") author: String
     ): RecipeResponse
-
 
 }

@@ -1,17 +1,17 @@
 package danihmello.tcc.recipes.api
 
 class RecipeResponse(
-    val title: String,
-    val imageUrl: String,
-    val slug: String,
     val author: String,
+    val image_url: String,
+    val prepare_time: String,
     val serves: String,
-    val prepareTime: String,
-    val steps: List<StepsResponse>
+    val slug: String,
+    val steps: List<StepsResponse>,
+    val title: String
 )
 
 class StepsResponse(
-    val title: String,
     val ingredients: List<String>,
-    val preparation: String
+    val preparation: String,
+    val title: String
 )

@@ -46,10 +46,10 @@ class AppViewModel @Inject constructor(
         }
     }
 
-    fun buildRecipe(searchedRecipe: String) {
+    fun buildRecipe(searchedRecipe: String, author: String) {
         viewModelScope.safeLaunch {
             _recipeResult.postValue(RecipeResult.Loading)
-            val recipeInfo = recipesUseCase.getRecipe(searchedRecipe)
+            val recipeInfo = recipesUseCase.getRecipe(searchedRecipe, author)
             _recipeResponse.postValue(recipeInfo)
             _recipeResult.postValue(RecipeResult.Completed)
         }

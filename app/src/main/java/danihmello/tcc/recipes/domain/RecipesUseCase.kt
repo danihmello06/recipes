@@ -6,5 +6,5 @@ import danihmello.tcc.recipes.data.Search
 interface RecipesUseCase {
     suspend fun getSearchResult(searchedWord: String): List<Search>
 
-    suspend fun getRecipe(searchedRecipe: String): Recipe
+    suspend fun getRecipe(searchedRecipe: String, author: String): Recipe
 }

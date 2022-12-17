@@ -12,7 +12,6 @@ class SearchAdapter(
     private val searchClickListener: danihmello.tcc.recipes.ItemSearchClickListener
 ) : RecyclerView.Adapter<SearchViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         return SearchViewHolder(

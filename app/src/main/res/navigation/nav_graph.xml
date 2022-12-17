@@ -36,6 +36,11 @@
                 android:defaultValue="pudim-de-mandioca-com-cumaru"
                 app:argType="string"
                 />
+            <argument
+                android:name="AUTHOR"
+                android:defaultValue="author"
+                app:argType="string"
+                />
         </action>
     </fragment>
 
