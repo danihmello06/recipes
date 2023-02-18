@@ -19,19 +19,19 @@ object RecipeMapper {
 
     fun mapRecipe(recipeResponse: RecipeResponse): Recipe {
         return Recipe(
-            recipeResponse.title,
-            recipeResponse.image_url,
-            recipeResponse.slug,
             recipeResponse.author,
-            recipeResponse.serves,
+            recipeResponse.image_url,
             recipeResponse.prepare_time,
+            recipeResponse.serves,
+            recipeResponse.slug,
             recipeResponse.steps.map { step ->
                 Recipe.Steps(
                     step.title,
                     step.ingredients,
                     formatStep(step.preparation)
                 )
-            }
+            },
+            recipeResponse.title
         )
     }
 

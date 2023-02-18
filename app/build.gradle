@@ -7,7 +7,6 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 
-
 android {
     compileSdk rootProject.compileSdkVersion
 
@@ -26,16 +25,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         viewBinding true
     }
+
     sourceSets {
         main {
             kotlin {
@@ -43,6 +46,7 @@ android {
             }
         }
     }
+
     namespace 'danihmello.tcc.recipes'
 }
 
@@ -71,6 +75,6 @@ dependencies {
 
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
 
-
-
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 }
