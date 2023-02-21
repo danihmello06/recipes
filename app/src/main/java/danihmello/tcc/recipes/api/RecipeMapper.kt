@@ -19,6 +19,7 @@ object RecipeMapper {
 
     fun mapRecipe(recipeResponse: RecipeResponse): Recipe {
         return Recipe(
+            0,
             recipeResponse.author,
             recipeResponse.image_url,
             recipeResponse.prepare_time,

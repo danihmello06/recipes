@@ -54,4 +54,13 @@ class AppViewModel @Inject constructor(
             _recipeResult.postValue(RecipeResult.Completed)
         }
     }
+
+    fun mockRecipe(recipeList: List<Recipe>) {
+        viewModelScope.safeLaunch {
+            _recipeResult.postValue(RecipeResult.Loading)
+            val recipeInfo = recipesUseCase.getRecipe(recipeList[0].slug!!, recipeList[0].author!!)
+            _recipeResponse.postValue(recipeInfo)
+            _recipeResult.postValue(RecipeResult.Completed)
+        }
+    }
 }
