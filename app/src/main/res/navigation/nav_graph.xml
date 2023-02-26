@@ -53,5 +53,17 @@
 
     </fragment>
 
+    <action
+        android:id="@+id/homeFragment"
+        app:destination="@id/fragment_home" />
+
+    <action
+        android:id="@+id/searchFragment"
+        app:destination="@id/fragment_search" />
+
+    <action
+        android:id="@+id/favoritesFragment"
+        app:destination="@id/fragment_search" />
+
 
 </navigation>
