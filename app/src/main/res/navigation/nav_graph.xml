@@ -50,7 +50,13 @@
         android:name="danihmello.tcc.recipes.ui.RecipeFragment"
         android:label="RecipeFragment"
         tools:layout="@layout/fragment_recipe">
+    </fragment>
 
+    <fragment
+        android:id="@+id/fragment_favorites"
+        android:name="danihmello.tcc.recipes.ui.FavoritesFragment"
+        android:label="SavedFragment"
+        tools:layout="@layout/fragment_favorites">
     </fragment>
 
     <action
@@ -63,7 +69,7 @@
 
     <action
         android:id="@+id/favoritesFragment"
-        app:destination="@id/fragment_search" />
+        app:destination="@id/fragment_favorites" />
 
 
 </navigation>

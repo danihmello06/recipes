@@ -9,8 +9,7 @@
     <!-- Bottom Navigation menu -->
     <string name="bnav_home">Home</string>
     <string name="bnav_search">Busca</string>
-    <string name="bnav_saved">Receitas Salvas</string>
-    <string name="bnav_account">Minha Conta</string>
+    <string name="bnav_saved">Favoritas</string>
 
 
     <!-- Página da receita -->
