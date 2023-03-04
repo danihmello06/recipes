@@ -27,6 +27,6 @@ object DatabaseModule {
 
     @Provides
     fun provideRecipeDao(appDatabase: AppDatabase): FavoriteRecipeDao {
-        return appDatabase.recipeDao()
+        return appDatabase.favoriteRecipeDao()
     }
 }
