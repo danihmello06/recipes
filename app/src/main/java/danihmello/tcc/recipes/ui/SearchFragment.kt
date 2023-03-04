@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import danihmello.tcc.recipes.data.Search
+import danihmello.tcc.recipes.scraping_api.data.Search
 import danihmello.tcc.recipes.databinding.FragmentSearchBinding
 import danihmello.tcc.recipes.ui.adapter.SearchAdapter
 import danihmello.tcc.recipes.ui.model.SearchResult

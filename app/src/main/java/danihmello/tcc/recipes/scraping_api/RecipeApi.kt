@@ -1,4 +1,4 @@
-package danihmello.tcc.recipes.api
+package danihmello.tcc.recipes.scraping_api
 
 import retrofit2.http.GET
 import retrofit2.http.Query

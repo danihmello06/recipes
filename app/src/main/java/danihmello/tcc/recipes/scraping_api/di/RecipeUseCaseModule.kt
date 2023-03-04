@@ -1,7 +1,7 @@
-package danihmello.tcc.recipes.di
+package danihmello.tcc.recipes.scraping_api.di
 
-import danihmello.tcc.recipes.domain.RecipesUseCase
-import danihmello.tcc.recipes.domain.RecipesUseCaseImpl
+import danihmello.tcc.recipes.scraping_api.domain.RecipesUseCase
+import danihmello.tcc.recipes.scraping_api.domain.RecipesUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

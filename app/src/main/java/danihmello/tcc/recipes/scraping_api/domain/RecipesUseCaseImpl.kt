@@ -1,7 +1,7 @@
-package danihmello.tcc.recipes.domain
+package danihmello.tcc.recipes.scraping_api.domain
 
-import danihmello.tcc.recipes.data.Recipe
-import danihmello.tcc.recipes.data.Search
+import danihmello.tcc.recipes.scraping_api.data.Recipe
+import danihmello.tcc.recipes.scraping_api.data.Search
 import javax.inject.Inject
 
 class RecipesUseCaseImpl @Inject constructor(

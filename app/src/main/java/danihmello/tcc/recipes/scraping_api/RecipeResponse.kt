@@ -1,4 +1,4 @@
-package danihmello.tcc.recipes.api
+package danihmello.tcc.recipes.scraping_api
 
 class RecipeResponse(
     val author: String,

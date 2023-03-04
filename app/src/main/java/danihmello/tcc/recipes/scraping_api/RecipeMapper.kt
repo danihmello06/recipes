@@ -1,7 +1,7 @@
-package danihmello.tcc.recipes.api
+package danihmello.tcc.recipes.scraping_api
 
-import danihmello.tcc.recipes.data.Recipe
-import danihmello.tcc.recipes.data.Search
+import danihmello.tcc.recipes.scraping_api.data.Recipe
+import danihmello.tcc.recipes.scraping_api.data.Search
 
 object RecipeMapper {
 

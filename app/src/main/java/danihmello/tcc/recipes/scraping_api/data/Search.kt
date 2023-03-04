@@ -1,4 +1,4 @@
-package danihmello.tcc.recipes.data
+package danihmello.tcc.recipes.scraping_api.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

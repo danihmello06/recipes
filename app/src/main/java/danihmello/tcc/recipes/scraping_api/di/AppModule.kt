@@ -1,8 +1,8 @@
-package danihmello.tcc.recipes.di
+package danihmello.tcc.recipes.scraping_api.di
 
-import danihmello.tcc.recipes.api.RecipeApi
-import danihmello.tcc.recipes.api.RecipesRepositoryImpl
-import danihmello.tcc.recipes.domain.RecipesRepository
+import danihmello.tcc.recipes.scraping_api.RecipeApi
+import danihmello.tcc.recipes.scraping_api.RecipesRepositoryImpl
+import danihmello.tcc.recipes.scraping_api.domain.RecipesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

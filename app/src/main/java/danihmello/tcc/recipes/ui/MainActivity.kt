@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.room.Room
 import danihmello.tcc.recipes.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import danihmello.tcc.recipes.R
+import danihmello.tcc.recipes.database.AppDatabase
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

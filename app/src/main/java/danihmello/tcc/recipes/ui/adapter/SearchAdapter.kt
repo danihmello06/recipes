@@ -3,7 +3,7 @@ package danihmello.tcc.recipes.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import danihmello.tcc.recipes.data.Search
+import danihmello.tcc.recipes.scraping_api.data.Search
 import danihmello.tcc.recipes.databinding.SearchItemBinding
 import danihmello.tcc.recipes.ui.adapter.viewholder.SearchViewHolder
 

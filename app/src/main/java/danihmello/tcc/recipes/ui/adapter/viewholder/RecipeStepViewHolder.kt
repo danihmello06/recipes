@@ -2,7 +2,7 @@ package danihmello.tcc.recipes.ui.adapter.viewholder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import danihmello.tcc.recipes.data.Recipe
+import danihmello.tcc.recipes.scraping_api.data.Recipe
 import danihmello.tcc.recipes.databinding.StepItemBinding
 import danihmello.tcc.recipes.ui.adapter.RecipeIngredientAdapter
 import danihmello.tcc.recipes.ui.adapter.RecipePreparationAdapter

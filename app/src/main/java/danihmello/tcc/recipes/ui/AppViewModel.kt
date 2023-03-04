@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import danihmello.tcc.recipes.data.Recipe
-import danihmello.tcc.recipes.data.Search
-import danihmello.tcc.recipes.domain.RecipesUseCase
+import danihmello.tcc.recipes.scraping_api.data.Recipe
+import danihmello.tcc.recipes.scraping_api.data.Search
+import danihmello.tcc.recipes.scraping_api.domain.RecipesUseCase
 import danihmello.tcc.recipes.ui.model.RecipeResult
 import danihmello.tcc.recipes.ui.model.SearchResult
 import danihmello.tcc.recipes.utils.CustomCoroutineScope
@@ -50,15 +50,6 @@ class AppViewModel @Inject constructor(
         viewModelScope.safeLaunch {
             _recipeResult.postValue(RecipeResult.Loading)
             val recipeInfo = recipesUseCase.getRecipe(searchedRecipe, author)
-            _recipeResponse.postValue(recipeInfo)
-            _recipeResult.postValue(RecipeResult.Completed)
-        }
-    }
-
-    fun mockRecipe(recipeList: List<Recipe>) {
-        viewModelScope.safeLaunch {
-            _recipeResult.postValue(RecipeResult.Loading)
-            val recipeInfo = recipesUseCase.getRecipe(recipeList[0].slug!!, recipeList[0].author!!)
             _recipeResponse.postValue(recipeInfo)
             _recipeResult.postValue(RecipeResult.Completed)
         }

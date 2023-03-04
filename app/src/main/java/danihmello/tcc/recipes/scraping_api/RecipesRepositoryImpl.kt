@@ -1,8 +1,8 @@
-package danihmello.tcc.recipes.api
+package danihmello.tcc.recipes.scraping_api
 
-import danihmello.tcc.recipes.data.Recipe
-import danihmello.tcc.recipes.data.Search
-import danihmello.tcc.recipes.domain.RecipesRepository
+import danihmello.tcc.recipes.scraping_api.data.Recipe
+import danihmello.tcc.recipes.scraping_api.data.Search
+import danihmello.tcc.recipes.scraping_api.domain.RecipesRepository
 import javax.inject.Inject
 
 class RecipesRepositoryImpl @Inject constructor(
