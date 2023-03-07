@@ -3,25 +3,23 @@ package danihmello.tcc.recipes.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import danihmello.tcc.recipes.ItemSearchClickListener
 import danihmello.tcc.recipes.scraping_api.data.Search
 import danihmello.tcc.recipes.databinding.SearchItemBinding
+import danihmello.tcc.recipes.ui.adapter.viewholder.FavoriteViewHolder
 import danihmello.tcc.recipes.ui.adapter.viewholder.SearchViewHolder
 
-class SearchAdapter(
+class FavoriteAdapter(
     private val searchList: List<Search>,
-    private val searchClickListener: ItemSearchClickListener
-) : RecyclerView.Adapter<SearchViewHolder>() {
+) : RecyclerView.Adapter<FavoriteViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        return SearchViewHolder(
-            SearchItemBinding.inflate(layoutInflater, parent, false),
-            searchClickListener
+        return FavoriteViewHolder(
+            SearchItemBinding.inflate(layoutInflater, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
         holder.bind(searchList[position])
     }
 

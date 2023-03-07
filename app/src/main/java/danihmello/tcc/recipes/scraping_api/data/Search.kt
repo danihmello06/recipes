@@ -7,7 +7,6 @@ import kotlinx.parcelize.Parcelize
 data class Search(
     val author: String,
     val imageUrl: String,
-    val index: Int,
     val slug: String,
     val title: String
 ) : Parcelable

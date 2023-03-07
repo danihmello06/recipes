@@ -10,7 +10,6 @@ object RecipeMapper {
             Search(
                 search.author,
                 search.image_url,
-                search.index,
                 search.slug,
                 search.title
             )

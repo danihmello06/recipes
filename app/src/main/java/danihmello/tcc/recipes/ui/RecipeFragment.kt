@@ -45,6 +45,8 @@ class RecipeFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             activity?.onBackPressed()
         }
+
+
     }
 
     private fun AppViewModel.setupRecipeResponseObserver() {
@@ -100,6 +102,14 @@ class RecipeFragment : Fragment() {
             recipeImage.loadImage(recipe.imageUrl)
             recipeTitle.text = recipe.title
             stepsRecycler.adapter = RecipeStepAdapter(recipe.steps!!)
+            favoriteRecipeStar.setOnClickListener {
+                recipeViewModel.saveFavoriteRecipeInDB(
+                    recipe.author ?: "",
+                    recipe.slug ?: "",
+                    recipe.imageUrl ?: "",
+                    recipe.title ?: ""
+                )
+            }
         }
     }
 }

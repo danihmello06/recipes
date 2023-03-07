@@ -1,6 +1,7 @@
 package danihmello.tcc.recipes.database.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import danihmello.tcc.recipes.database.entity.FavoriteRecipeEntity
@@ -14,5 +15,8 @@ interface FavoriteRecipeDao {
 
     @Insert
     suspend fun saveRecipe(entity: FavoriteRecipeEntity)
+
+    @Delete
+    suspend fun deleteRecipe(entity: FavoriteRecipeEntity)
 
 }

@@ -13,6 +13,7 @@ import danihmello.tcc.recipes.databinding.FragmentSearchBinding
 import danihmello.tcc.recipes.ui.adapter.SearchAdapter
 import danihmello.tcc.recipes.ui.model.SearchResult
 import dagger.hilt.android.AndroidEntryPoint
+import danihmello.tcc.recipes.ItemSearchClickListener
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -27,10 +28,14 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        wordSearched = arguments?.getString("WORD") ?: "word"
+        if(wordSearched.isNullOrBlank()) {
+            wordSearched = arguments?.getString("WORD") ?: " "
+        }
+
         viewModel.requestSearch(wordSearched)
         return binding.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -94,7 +99,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun itemSearchClickListener() = object :
-        danihmello.tcc.recipes.ItemSearchClickListener {
+        ItemSearchClickListener {
         override fun onClick(searchItem: Search) {
             val bundle = bundleOf("SLUG" to searchItem.slug, "AUTHOR" to searchItem.author)
             findNavController().navigate(SearchFragmentDirections.actionSearchToRecipe().actionId, bundle)
