@@ -22,5 +22,4 @@ class RecipeIngredientAdapter(
     }
 
     override fun getItemCount(): Int = ingredientList.size
-
 }

@@ -21,8 +21,15 @@ buildscript {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+plugins {
+    id("org.jlleitschuh.gradle.ktlint") version "11.1.0" apply false
+}
+
+subprojects {
+    apply plugin: "org.jlleitschuh.gradle.ktlint"
+    ktlint {
+        version = "0.40.0"
+    }
 }
 
 ext {
@@ -34,3 +41,8 @@ ext {
     hiltAndroidXVersion = '1.0.0-alpha03'
     retrofitVersion = '2.9.0'
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

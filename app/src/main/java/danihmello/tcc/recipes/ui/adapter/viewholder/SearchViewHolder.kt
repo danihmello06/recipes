@@ -1,9 +1,9 @@
 package danihmello.tcc.recipes.ui.adapter.viewholder
 
 import androidx.recyclerview.widget.RecyclerView
-import danihmello.tcc.recipes.utils.Utils.loadImage
 import danihmello.tcc.recipes.data.Search
 import danihmello.tcc.recipes.databinding.SearchItemBinding
+import danihmello.tcc.recipes.utils.Utils.loadImage
 
 class SearchViewHolder(
     private val binding: SearchItemBinding,
@@ -18,7 +18,7 @@ class SearchViewHolder(
         with(binding) {
             searchTitle.text = itemSearch.title
             searchItemImage.loadImage(itemSearch.imageUrl)
-            root.setOnClickListener {listener.onClick(itemSearch)}
+            root.setOnClickListener { listener.onClick(itemSearch) }
         }
     }
 }

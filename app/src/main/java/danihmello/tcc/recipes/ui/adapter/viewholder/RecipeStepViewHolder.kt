@@ -25,7 +25,7 @@ class RecipeStepViewHolder(
         preparationAdapter: RecipePreparationAdapter
     ) {
         with(binding) {
-            if(stepItem.title.isNullOrBlank()) {
+            if (stepItem.title.isNullOrBlank()) {
                 stepItemBarFirst.visibility = View.GONE
                 stepItemBarSecond.visibility = View.GONE
                 stepTitle.visibility = View.GONE

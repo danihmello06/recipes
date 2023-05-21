@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -10,32 +10,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/step_item_horizontal_bar"
+        app:layout_constraintBottom_toBottomOf="@id/stepTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/stepTitle"
-        app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
+        app:layout_constraintTop_toTopOf="@id/stepTitle" />
 
     <TextView
         android:id="@+id/stepTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="@dimen/recipe_step_title_margin_top"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:textSize="@dimen/recipe_step_title_text_size"
         android:textColor="@color/grey33"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="@dimen/recipe_step_title_text_size"
         app:layout_constraintBottom_toTopOf="@id/ingredientsTitle"
+        app:layout_constraintEnd_toStartOf="@id/stepItemBarSecond"
         app:layout_constraintStart_toEndOf="@id/stepItemBarFirst"
-        app:layout_constraintEnd_toStartOf="@id/stepItemBarSecond"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/stepItemBarSecond"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/step_item_horizontal_bar"
+        app:layout_constraintBottom_toBottomOf="@id/stepTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/stepTitle"
-        app:layout_constraintBottom_toBottomOf="@id/stepTitle"/>
+        app:layout_constraintTop_toTopOf="@id/stepTitle" />
 
     <ImageView
         android:id="@+id/ingredientIcon"
@@ -44,27 +44,27 @@
         android:layout_marginTop="@dimen/recipe_step_ingredient_icon_margin_top"
         android:src="@drawable/icon_ingredient"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/stepTitle"/>
+        app:layout_constraintTop_toBottomOf="@id/stepTitle" />
 
     <TextView
         android:id="@+id/ingredientsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/recipe_step_ingredient_title_margin_top"
         android:layout_marginStart="@dimen/recipe_step_ingredient_title_margin_start"
-        android:text="@string/recipe_ingredients_title"
-        android:textSize="@dimen/recipe_step_ingredient_title_text_size"
-        android:textColor="@color/orange_theme"
+        android:layout_marginTop="@dimen/recipe_step_ingredient_title_margin_top"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/recipe_ingredients_title"
+        android:textColor="@color/orange_theme"
+        android:textSize="@dimen/recipe_step_ingredient_title_text_size"
         app:layout_constraintBottom_toBottomOf="@id/ingredientIcon"
-        app:layout_constraintStart_toEndOf="@id/ingredientIcon"/>
+        app:layout_constraintStart_toEndOf="@id/ingredientIcon" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ingredientsRecycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/recipe_step_ingredient_recycler_padding_top"
         android:clipToPadding="false"
+        android:paddingTop="@dimen/recipe_step_ingredient_recycler_padding_top"
         android:paddingBottom="@dimen/recipe_step_ingredient_recycler_padding_bottom"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="@id/ingredientsTitle"
@@ -77,25 +77,25 @@
         android:layout_height="wrap_content"
         android:src="@drawable/icon_prepare"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ingredientsRecycler"/>
+        app:layout_constraintTop_toBottomOf="@id/ingredientsRecycler" />
 
     <TextView
         android:id="@+id/preparationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/recipe_preparation_title"
-        android:textSize="@dimen/recipe_step_ingredient_preparation_title_text_size"
-        android:textColor="@color/orange_theme"
         android:fontFamily="@font/poppins_medium"
+        android:text="@string/recipe_preparation_title"
+        android:textColor="@color/orange_theme"
+        android:textSize="@dimen/recipe_step_ingredient_preparation_title_text_size"
         app:layout_constraintBottom_toBottomOf="@id/preparationIcon"
-        app:layout_constraintStart_toStartOf="@id/ingredientsTitle"/>
+        app:layout_constraintStart_toStartOf="@id/ingredientsTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/preparationRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/recipe_step_ingredient_preparation_recycler_padding_top"
         android:clipToPadding="false"
+        android:paddingTop="@dimen/recipe_step_ingredient_preparation_recycler_padding_top"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/preparationTitle"

@@ -8,5 +8,4 @@ interface RecipesRepository {
     suspend fun getSearchResult(searchedWord: String): List<Search>
 
     suspend fun getRecipe(searchedRecipe: String, author: String): Recipe
-
 }

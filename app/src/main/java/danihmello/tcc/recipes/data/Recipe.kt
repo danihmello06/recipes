@@ -12,15 +12,12 @@ data class Recipe(
     val serves: String,
     val prepareTime: String,
     val steps: List<Steps>
-): Parcelable {
+) : Parcelable {
 
     @Parcelize
     data class Steps(
         val title: String,
         val ingredients: List<String>,
         val preparation: List<String>
-    ): Parcelable
-
-
-
+    ) : Parcelable
 }

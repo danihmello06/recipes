@@ -25,5 +25,4 @@ class SearchAdapter(
     }
 
     override fun getItemCount(): Int = searchList.size
-
 }

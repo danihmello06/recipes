@@ -5,7 +5,7 @@ import retrofit2.http.Query
 
 interface RecipeApi {
 
-    companion object{
+    companion object {
         const val BASE_URL = "https://recipescraping.herokuapp.com/"
     }
 
@@ -19,5 +19,4 @@ interface RecipeApi {
         @Query("slug") slug: String,
         @Query("author") author: String
     ): RecipeResponse
-
 }

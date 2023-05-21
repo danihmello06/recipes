@@ -1,12 +1,12 @@
 package danihmello.tcc.recipes.di
 
-import danihmello.tcc.recipes.api.RecipeApi
-import danihmello.tcc.recipes.api.RecipesRepositoryImpl
-import danihmello.tcc.recipes.domain.RecipesRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import danihmello.tcc.recipes.api.RecipeApi
+import danihmello.tcc.recipes.api.RecipesRepositoryImpl
+import danihmello.tcc.recipes.domain.RecipesRepository
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +19,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit  {
+    fun provideRetrofit(): Retrofit {
         val httpClient = OkHttpClient.Builder()
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)

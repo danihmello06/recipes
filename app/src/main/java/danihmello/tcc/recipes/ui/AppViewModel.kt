@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import danihmello.tcc.recipes.data.Recipe
 import danihmello.tcc.recipes.data.Search
 import danihmello.tcc.recipes.domain.RecipesUseCase
 import danihmello.tcc.recipes.ui.model.RecipeResult
 import danihmello.tcc.recipes.ui.model.SearchResult
 import danihmello.tcc.recipes.utils.CustomCoroutineScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import javax.inject.Inject
 

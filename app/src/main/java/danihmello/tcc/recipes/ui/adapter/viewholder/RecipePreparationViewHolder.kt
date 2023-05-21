@@ -3,7 +3,7 @@ package danihmello.tcc.recipes.ui.adapter.viewholder
 import androidx.recyclerview.widget.RecyclerView
 import danihmello.tcc.recipes.databinding.PreparationItemBinding
 
-class RecipePreparationViewHolder (
+class RecipePreparationViewHolder(
     private val binding: PreparationItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -11,5 +11,4 @@ class RecipePreparationViewHolder (
         binding.preparationItem.text = preparationItem
         binding.preparationNumber.text = position.toString()
     }
-
 }

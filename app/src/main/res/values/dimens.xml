@@ -33,7 +33,6 @@
     <dimen name="search_item_title_margin_bottom">8dp</dimen>
     <dimen name="search_item_title_padding_end">12dp</dimen>
 
-
     <!-- RECIPE FRAGMENT -->
     <dimen name="recipe_arrow_back_margin_top">20dp</dimen>
     <dimen name="recipe_arrow_back_margin_start">20dp</dimen>
@@ -73,8 +72,4 @@
     <dimen name="recipe_step_ingredient_recycler_padding_bottom">20dp</dimen>
     <dimen name="recipe_step_ingredient_preparation_title_text_size">16sp</dimen>
     <dimen name="recipe_step_ingredient_preparation_recycler_padding_top">14dp</dimen>
-
-
-
-
 </resources>

@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class RecipesUseCaseImpl @Inject constructor(
     private val repository: RecipesRepository
-): RecipesUseCase {
+) : RecipesUseCase {
 
     override suspend fun getSearchResult(searchedWord: String): List<Search> {
         return repository.getSearchResult(searchedWord)

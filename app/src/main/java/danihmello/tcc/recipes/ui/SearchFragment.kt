@@ -1,18 +1,18 @@
 package danihmello.tcc.recipes.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import danihmello.tcc.recipes.data.Search
 import danihmello.tcc.recipes.databinding.FragmentSearchBinding
 import danihmello.tcc.recipes.ui.adapter.SearchAdapter
 import danihmello.tcc.recipes.ui.model.SearchResult
-import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchFragment : Fragment() {
@@ -23,7 +23,8 @@ class SearchFragment : Fragment() {
     private var wordSearched: String = ""
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
@@ -46,7 +47,7 @@ class SearchFragment : Fragment() {
 
     private fun AppViewModel.setupSearchResponseObserver() {
         searchResult.observe(viewLifecycleOwner) {
-            when(it) {
+            when (it) {
                 is SearchResult.Completed -> {
                     searchResponse.value?.let { response ->
                         setTitle(wordSearched)

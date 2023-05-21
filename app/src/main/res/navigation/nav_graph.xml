@@ -44,14 +44,11 @@
         </action>
     </fragment>
 
-
     <fragment
         android:id="@+id/fragment_recipe"
         android:name="danihmello.tcc.recipes.ui.RecipeFragment"
         android:label="RecipeFragment"
         tools:layout="@layout/fragment_recipe">
-
     </fragment>
-
 
 </navigation>

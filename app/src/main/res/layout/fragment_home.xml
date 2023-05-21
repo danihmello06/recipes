@@ -11,64 +11,64 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@drawable/home_background"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/gradient"
         android:rotation="180"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/titleMix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_title_mix_text"
-        android:textSize="@dimen/home_title_mix_text_size"
-        android:textColor="@color/whiteFF"
-        android:fontFamily="@font/poppins_regular"
         android:layout_marginStart="@dimen/home_title_mix_margin_start"
         android:layout_marginTop="@dimen/home_title_mix_margin_top"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/home_title_mix_text"
+        android:textColor="@color/whiteFF"
+        android:textSize="@dimen/home_title_mix_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/titleReceitas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/home_title_receitas_margin_top"
         android:fontFamily="@font/poppins_bold"
+        android:text="@string/home_title_Receitas_text"
         android:textColor="@color/whiteFF"
         android:textSize="@dimen/home_title_receitas_text_size"
-        android:text="@string/home_title_Receitas_text"
-        android:layout_marginTop="@dimen/home_title_receitas_margin_top"
         app:layout_constraintStart_toEndOf="@id/titleMix"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleMix">
 
         <SearchView
             android:id="@+id/searchButton"
             android:layout_width="match_parent"
             android:layout_height="@dimen/home_toolbar_search_button_height"
+            android:layout_marginHorizontal="@dimen/home_toolbar_search_button_margin_horizontal"
             android:background="@drawable/bg_search_rounded"
-            android:queryHint="Encontre sua receita aqui"
-            android:searchIcon="@drawable/search_icon"
-            android:iconifiedByDefault="false"
             android:focusable="true"
-            android:layout_marginHorizontal="@dimen/home_toolbar_search_button_margin_horizontal" />
+            android:iconifiedByDefault="false"
+            android:queryHint="Encontre sua receita aqui"
+            android:searchIcon="@drawable/search_icon" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 </androidx.constraintlayout.widget.ConstraintLayout>
