@@ -12,6 +12,7 @@ import danihmello.tcc.recipes.ui.model.SearchResult
 import danihmello.tcc.recipes.utils.CustomCoroutineScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import danihmello.tcc.recipes.database.DatabaseMapper
+import danihmello.tcc.recipes.database.domain.DeleteFavoriteRecipeInDatabaseUseCase
 import danihmello.tcc.recipes.database.domain.GetFavoriteRecipesFromDatabaseUseCase
 import danihmello.tcc.recipes.database.domain.SaveFavoriteRecipeToDatabaseUseCase
 import danihmello.tcc.recipes.database.entity.FavoriteRecipeEntity
@@ -23,7 +24,8 @@ import javax.inject.Inject
 class AppViewModel @Inject constructor(
     private val recipesUseCase: RecipesUseCase,
     private val saveFavoriteRecipeToDatabaseUseCase: SaveFavoriteRecipeToDatabaseUseCase,
-    private val getFavoriteRecipesFromDatabaseUseCase: GetFavoriteRecipesFromDatabaseUseCase
+    private val getFavoriteRecipesFromDatabaseUseCase: GetFavoriteRecipesFromDatabaseUseCase,
+    private val deleteFavoriteRecipeInDatabaseUseCase: DeleteFavoriteRecipeInDatabaseUseCase
 ) : ViewModel(), CustomCoroutineScope {
 
     override val fragmentExceptionHandler =
@@ -91,9 +93,15 @@ class AppViewModel @Inject constructor(
         }
     }
 
-    fun deleteFavoriteRecipeInDB() {
+    fun deleteFavoriteRecipeInDB(author: String, imageUrl: String, slug: String, title: String) {
+        val favoriteRecipe = DatabaseMapper.mapFavoriteToDatabase(
+            author,
+            slug,
+            imageUrl,
+            title
+        )
         viewModelScope.safeLaunch {
-
+            deleteFavoriteRecipeInDatabaseUseCase.deleteFavoriteRecipe(favoriteRecipe)
         }
     }
 }

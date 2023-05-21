@@ -15,4 +15,7 @@ class FavoriteRecipeRepository @Inject constructor(
     suspend fun saveRecipe(entity: FavoriteRecipeEntity) =
         run { favoriteRecipeDao.saveRecipe(entity) }
 
+    suspend fun deleteRecipe(entity: FavoriteRecipeEntity) =
+        run { favoriteRecipeDao.deleteRecipe(entity) }
+
 }

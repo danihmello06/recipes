@@ -45,8 +45,6 @@ class RecipeFragment : Fragment() {
         binding.arrowBack.setOnClickListener {
             activity?.onBackPressed()
         }
-
-
     }
 
     private fun AppViewModel.setupRecipeResponseObserver() {
