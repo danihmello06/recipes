@@ -9,26 +9,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_bold"
-        android:textColor="#F2994A"
         android:text="2"
-        android:textSize="32dp"
+        android:textColor="@color/orange_theme"
+        android:textSize="@dimen/recipe_preparation_number_text_size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/preparationItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:paddingEnd="40dp"
-        android:paddingBottom="12dp"
-        android:layout_marginTop="6dp"
-        android:textColor="#333333"
+        android:layout_marginStart="@dimen/recipe_preparation_item_margin_start"
+        android:layout_marginTop="@dimen/recipe_preparation_item_margin_top"
         android:fontFamily="@font/poppins_regular"
-        android:textSize="12dp"
-        android:justificationMode="inter_word"
-        android:text="Preparation 123Preparation 123Preparation 123Preparation 123Preparation 123Preparation 1222"
+        android:paddingEnd="@dimen/recipe_preparation_item_padding_end"
+        android:paddingBottom="@dimen/recipe_preparation_item_padding_bottom"
+        android:textColor="@color/grey33"
+        android:textSize="@dimen/recipe_preparation_item_text_size"
         app:layout_constraintStart_toEndOf="@id/preparationNumber"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

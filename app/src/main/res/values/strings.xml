@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">MixReceitas</string>
 
+    <!-- HOME FRAGMENT-->
     <string name="home_title_mix_text">Mix</string>
     <string name="home_title_Receitas_text">Receitas</string>
 
+    <!-- SEARCH FRAGMENT -->
     <string name="search_showing_results_text">Mostrando todos os \nresultados para: </string>
     <string name="search_error_text">Servidor fora do ar! :(</string>
+
+    <!-- RECIPE FRAGMENT -->
+    <string name="recipe_error_text">Desculpe, essa receita\nestá indisponível</string>
+    <string name="recipe_preparation_title">Modo de preparo</string>
+    <string name="recipe_ingredients_title">Ingredientes</string>
+
 
 </resources>

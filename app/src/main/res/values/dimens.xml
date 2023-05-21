@@ -1,7 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
-    <dimen name="recipe_page_subtitle_text_size">16dp</dimen>
 
     <!-- HOME FRAGMENT-->
     <dimen name="home_title_mix_text_size">32sp</dimen>
@@ -24,5 +23,58 @@
     <dimen name="search_recycler_margin_top">8dp</dimen>
     <dimen name="search_recycler_margin_horizontal">4dp</dimen>
     <dimen name="search_progress_bar_margin_top">350dp</dimen>
+
+    <!-- SEARCH FRAGMENT / LIST ITEM -->
+    <dimen name="search_item_margin_horizontal">8dp</dimen>
+    <dimen name="search_item_margin_vertical">8dp</dimen>
+    <dimen name="search_item_corner_radius">12dp</dimen>
+    <dimen name="search_item_title_text_size">12sp</dimen>
+    <dimen name="search_item_title_margin_start">8dp</dimen>
+    <dimen name="search_item_title_margin_bottom">8dp</dimen>
+    <dimen name="search_item_title_padding_end">12dp</dimen>
+
+
+    <!-- RECIPE FRAGMENT -->
+    <dimen name="recipe_arrow_back_margin_top">20dp</dimen>
+    <dimen name="recipe_arrow_back_margin_start">20dp</dimen>
+    <dimen name="recipe_title_margin_start">12dp</dimen>
+    <dimen name="recipe_title_margin_top">12dp</dimen>
+    <dimen name="recipe_title_margin_bottom">16dp</dimen>
+    <dimen name="recipe_title_text_size">24sp</dimen>
+    <dimen name="recipe_recycler_margin_start">12dp</dimen>
+    <dimen name="recipe_recycler_margin_end">12dp</dimen>
+    <dimen name="recipe_recycler_margin_top">8dp</dimen>
+    <dimen name="recipe_error_message_text_size">16sp</dimen>
+    <dimen name="recipe_error_message_margin_top">8dp</dimen>
+    <dimen name="recipe_error_image_margin_top">250dp</dimen>
+    <dimen name="recipe_progress_bar_margin_top">350dp</dimen>
+
+    <!-- RECIPE FRAGMENT / INGREDIENT ITEM -->
+    <dimen name="recipe_ingredient_item_padding_end">60dp</dimen>
+    <dimen name="recipe_ingredient_item_padding_start">12dp</dimen>
+    <dimen name="recipe_ingredient_item_text_size">12sp</dimen>
+
+    <!-- RECIPE FRAGMENT / PREPARATION ITEM -->
+    <dimen name="recipe_preparation_number_text_size">32sp</dimen>
+    <dimen name="recipe_preparation_item_text_size">12sp</dimen>
+    <dimen name="recipe_preparation_item_margin_top">6dp</dimen>
+    <dimen name="recipe_preparation_item_padding_bottom">12dp</dimen>
+    <dimen name="recipe_preparation_item_padding_end">40dp</dimen>
+    <dimen name="recipe_preparation_item_margin_start">14dp</dimen>
+
+    <!-- RECIPE FRAGMENT / STEP ITEM -->
+    <dimen name="recipe_step_title_margin_top">12dp</dimen>
+    <dimen name="recipe_step_title_text_size">16sp</dimen>
+    <dimen name="recipe_step_ingredient_icon_margin_top">12dp</dimen>
+    <dimen name="recipe_step_ingredient_title_margin_top">16dp</dimen>
+    <dimen name="recipe_step_ingredient_title_margin_start">16dp</dimen>
+    <dimen name="recipe_step_ingredient_title_text_size">16sp</dimen>
+    <dimen name="recipe_step_ingredient_recycler_padding_top">14dp</dimen>
+    <dimen name="recipe_step_ingredient_recycler_padding_bottom">20dp</dimen>
+    <dimen name="recipe_step_ingredient_preparation_title_text_size">16sp</dimen>
+    <dimen name="recipe_step_ingredient_preparation_recycler_padding_top">14dp</dimen>
+
+
+
 
 </resources>

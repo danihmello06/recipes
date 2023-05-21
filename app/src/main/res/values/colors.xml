@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="whiteFF">#FFFFFF</color>
+    <color name="grey33">#333333</color>
+    <color name="orange_theme">#F2994A</color>
+    <color name="white_F4">#F4F4F4</color>
 </resources>

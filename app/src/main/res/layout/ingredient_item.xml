@@ -11,20 +11,18 @@
         android:src="@drawable/circle_ingredient_item"
         app:layout_constraintBottom_toBottomOf="@id/ingredientItem"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/ingredientItem"/>
+        app:layout_constraintTop_toTopOf="@id/ingredientItem" />
 
     <TextView
         android:id="@+id/ingredientItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:fontFamily="@font/poppins_regular"
-        android:textColor="#333333"
-        android:paddingEnd="60dp"
-        android:layout_marginEnd="90dp"
-        android:textSize="12dp"
-        android:text="Ingredient 1233333333333333 Ingredient 12333333333333"
+        android:paddingStart="@dimen/recipe_ingredient_item_padding_start"
+        android:paddingEnd="@dimen/recipe_ingredient_item_padding_end"
+        android:textColor="@color/grey33"
+        android:textSize="@dimen/recipe_ingredient_item_text_size"
         app:layout_constraintStart_toEndOf="@id/circle_item"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
