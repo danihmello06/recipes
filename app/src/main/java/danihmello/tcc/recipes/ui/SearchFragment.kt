@@ -62,6 +62,7 @@ class SearchFragment : Fragment() {
                 }
                 is SearchResult.Failure -> {
                     hideLoading()
+                    buildErrorScreen()
                 }
             }
         }
@@ -75,6 +76,7 @@ class SearchFragment : Fragment() {
             showingResultsText.visibility = View.GONE
             searchRecipeTitle.visibility = View.GONE
             searchArrowBack.visibility = View.GONE
+            searchErrorText.visibility = View.GONE
         }
     }
 
@@ -85,6 +87,20 @@ class SearchFragment : Fragment() {
             searchBgGradient.visibility = View.VISIBLE
             showingResultsText.visibility = View.VISIBLE
             searchRecipeTitle.visibility = View.VISIBLE
+            searchArrowBack.visibility = View.VISIBLE
+            searchErrorText.visibility = View.GONE
+        }
+    }
+
+    private fun buildErrorScreen() {
+        with(binding) {
+            searchBgImage.visibility = View.GONE
+            searchBgGradient.visibility = View.GONE
+            showingResultsText.visibility = View.GONE
+            searchRecipeTitle.visibility = View.GONE
+            searchRecycler.visibility = View.GONE
+            searchProgressBar.visibility = View.GONE
+            searchErrorText.visibility = View.VISIBLE
             searchArrowBack.visibility = View.VISIBLE
         }
     }

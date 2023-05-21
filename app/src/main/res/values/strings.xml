@@ -1,27 +1,10 @@
 <resources>
     <string name="app_name">MixReceitas</string>
-    <string name="action_settings">Settings</string>
 
-    <!-- Strings used for fragments for navigation -->
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="home_title_mix_text">Mix</string>
+    <string name="home_title_Receitas_text">Receitas</string>
 
-    <!-- Bottom Navigation menu -->
-    <string name="bnav_home">Home</string>
-    <string name="bnav_search">Busca</string>
-    <string name="bnav_saved">Receitas Salvas</string>
-    <string name="bnav_account">Minha Conta</string>
-
-
-    <!-- Página da receita -->
-    <string name="recipe_title">Nhoque ao Pomodoro</string>
-    <string name="recipe_ingredients">Ingredientes</string>
-    <string name="recipe_instructions">Modo de Preparo</string>
-
-
-    <string name="activity_main_label">Label da main</string>
-    <string name="activity_home_label">Label da home</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_showing_results_text">Mostrando todos os \nresultados para: </string>
+    <string name="search_error_text">Servidor fora do ar! :(</string>
 
 </resources>
