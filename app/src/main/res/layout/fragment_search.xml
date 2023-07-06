@@ -85,7 +85,6 @@
             android:layout_marginHorizontal="@dimen/search_recycler_margin_horizontal"
             android:layout_marginTop="@dimen/search_recycler_margin_top"
             android:nestedScrollingEnabled="false"
-            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
